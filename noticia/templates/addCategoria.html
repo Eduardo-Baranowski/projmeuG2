@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<h1>Criar Categorias</h1>
+<form action="/categoria/salvar" method="post">
+    {% csrf_token %}
+    <label>Título da Categoria</label>
+    <input name="titulo_categoria" type="text">
+    <br><br>
+    <label>Descricao Categoria</label>
+    <textarea name="descricao_categoria" rows="4" cols="50">
+    </textarea>
+    <button type="submit" class="btn btn-sucess" role="button">Salvar</button>
+</form>
+{% endblock %}

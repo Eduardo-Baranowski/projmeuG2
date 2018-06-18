@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h1>Criar Usuario</h1>
+<form action="/usuario/salvar/1" method="post">
+    {% csrf_token %}
+    <label>Nome do Usuario:</label>
+    <input name="nome_usuario" type="text">
+    <br><br>
+    <label>email:</label>
+    <input name="email_usuario" type="text">
+    <br><br>
+    <label>Telefone</label>
+    <input name="telefone_usuario" type="text">
+    <br><br>
+    <label>Senha</label>
+    <input name="senha_usuario" type="password">
+    <br><br>
+    <label>Funcao</label>
+    <input name="funcao_usuario" type="text">
+    <br><br>
+    <button type="submit" class="btn btn-sucess" role="button">Salvar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+{% csrf_token %}
+<h1>Lista de Notícias</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Título</th>
+        <th scope="col">Subtítulo</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for noticia in noticias %}
+        <tr>
+            <th scope="row">{{noticia.id}}</th>
+            <td>{{noticia.titulo}}</td>
+            <td>{{noticia.subtitulo}}</td>
+            <td>{{noticia.autor}}</td>
+            <td><a class="btn btn-primary" role="button" href="/noticias/editar/{{noticia.id}}">Editar</a>
+            <a class="btn btn-danger" role="button" href="/noticias/excluir/{{noticia.id}}">Excluir</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<a class="btn btn-primary" role="button" href="/noticias/add">Nova Notícia</a>
+{% endblock %}

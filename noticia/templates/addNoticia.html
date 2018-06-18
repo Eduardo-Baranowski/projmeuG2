@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+  <h1>Criar Notícia</h1>
+  <form action="/noticia/salvar" method="post">
+    {% csrf_token %}
+    <label>Título da Noticia</label>
+    <input name="titulo_noticia" type="text">
+    <br><br>
+    <label>Subtitulo</label>
+    <textarea name="subtitulo_noticia" rows="4" cols="50">
+    </textarea>
+    <br><br>
+    <label>Descricao Notícia</label>
+    <textarea name="descricao_noticia" rows="4" cols="50">
+    </textarea>
+    <br><br>
+    <label>Data:</label>
+    <input name="data_noticia" type="date">
+    <br><br>
+    <label>Categoria:</label>
+      <select name="categoria">
+        {% for categoria in categorias %}
+        <option value="{{categoria.id}}">{{categoria.titulo}}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+    <label>Autor:</label>
+      <select name="autores">
+        {% for autor in autores %}
+        <option value="{{autor.id}}">{{autor.nome}}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+      <button type="submit" class="btn btn-success" role="button">Salvar</button>
+  </form>
+{% endblock %}

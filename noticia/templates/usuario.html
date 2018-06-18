@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+  <h1>Lista de Usuários</h1>
+
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for usuario in usuarios %}
+  	<tr>
+  		<th scope="row">{{ usuario.id }}</th>
+  		<td>{{ usuario.nome }}</td>
+      <td>{{ usuario.email }}</td>
+  		<td> {{usuario}}</td>
+  		<td>
+      	<a class="btn btn-danger" role='button' href='/usuarios/excluir/{{ usuario.id }}'>Excluir</a></td>
+  {% endfor %}
+  </tbody>
+</table>
+  <a class="" role='button' href='/usuario/add/1'>Novo Administrador</a>
+  <br><br>
+  <a class="" role='button' href='/usuario/add/2'>Novo Autor</a>
+  <br><br>
+  <a class="" role='button' href='/usuario/add/3'>Novo Visitante</a>
+
+{% endblock %}
