@@ -9,6 +9,15 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nome
 
+class Clientes(models.Model):
+    codCliente = models.CharField('cod', max_length=150)
+    nome = models.CharField('nome', max_length=150)
+    cpf = models.CharField('cpf', max_length=50)
+    cidadeCliente= models.CharField('cidade', max_length=50)
+
+    def __str__(self):
+        return self.nome
+
 class Autor(Usuario):
     cpf = models.CharField('CPF', max_length=50)
     escolaridade = models.CharField('Escolaridade', max_length=150)
@@ -37,6 +46,12 @@ class Noticia(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Functions(models.Model):
+    titulo = models.CharField('titulo', max_length=250)                
+
+    def __str__(self):
+        return self.titulo    
 
 class Comentario(models.Model):
     usuario = models.ForeignKey(Usuario, 'usuario')

@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h1 style="text-align: center;">Principais Notícias</h1>
+    <br><br><br><br><br><br>
+    <h1 style="text-align: center;">Funções do Teste</h1>
     <br/>
-    {% for noticia in noticias %}
-        <a style="text-decoration: none" href="noticia/{{noticia.id}}">
+    {% for function in functions%}
+    <br><br>
+        <a style="text-decoration: none" href="function/{{function.id}}">
             <div>
-                <h3>{{noticia.titulo}}</h3>
-                <h5>{{noticia.subtitulo}}</h5>
-                <h5 align="rigth">{{noticia.subtitulo}}</h5>
             </div>
         </a>
         <hr>

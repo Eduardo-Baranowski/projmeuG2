@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <h1>Função</h1>
+    <form action="/home/function/retornaCalc" method="post">
+    {% csrf_token %}
+    <label>Id</label>
+    <input  id = "cod" name="cod" type="number">
+    <br><br>
+    <button type="submit" class="btn btn-sucess" role="button">Executar Funcao</button>
+{% endblock %}
